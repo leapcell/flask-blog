@@ -18,7 +18,7 @@ api = Leapcell(
 
 author = os.environ.get("AUTHOR", "Leapcell User")
 avatar = os.environ.get("AVATAR", "https://leapcell.io/logo.png")
-resource = os.environ.get("TABLE_RESOURCE", "leapcell/flask-blog")
+resource = os.environ.get("TABLE_RESOURCE", "issac/flask-blog")
 table_id = os.environ.get("TABLE_ID", "tbl1738878922167070720")
 
 table = api.table(repository=resource, table_id=table_id)
