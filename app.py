@@ -13,7 +13,7 @@ load_dotenv()
 app = Flask(__name__)
 
 api = Leapcell(
-    os.environ.get("LEAPCELL_API_KEY"),
+    api_key=os.environ.get("LEAPCELL_API_KEY"),
 )
 
 author = os.environ.get("AUTHOR", "Leapcell User")
@@ -73,7 +73,7 @@ def search():
 @app.route("/post/<post_id>")
 def post(post_id):
     record = table.get_by_id(post_id)
-    markdown_html = markdown.markdown(record["content"])
+    markdown_html = markdown.markdown(record["content"] or '')
     params = {
         "author": author,
         "avatar": avatar,
